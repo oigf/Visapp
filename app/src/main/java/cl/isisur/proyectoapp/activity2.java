@@ -3,12 +3,34 @@ package cl.isisur.proyectoapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
-public class activity2 extends AppCompatActivity {
+public class activity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
+    String[] Selecione = {"Quedo Buenisimo", "Quedo Bueno", "Quedo presentable", "Quedo malo", "Quedo feo"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        spin.setOnItemSelectedListener(this);
+
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Selecione);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(aa);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
