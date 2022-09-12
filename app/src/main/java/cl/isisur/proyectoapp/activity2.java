@@ -2,15 +2,19 @@ package cl.isisur.proyectoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class activity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+    Button siguientepage;
     String[] Selecione = {"Quedo Buenisimo", "Quedo Bueno", "Quedo presentable", "Quedo malo", "Quedo feo"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +22,22 @@ public class activity2 extends AppCompatActivity implements AdapterView.OnItemSe
         setContentView(R.layout.activity_2);
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
+        siguientepage=(Button)findViewById(R.id.siguientepage);
 
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Selecione);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(aa);
+
+        siguientepage.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent i = new Intent(activity2.this,recicleview.class);
+                startActivity(i);
+            }
+        });
     }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
