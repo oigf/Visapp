@@ -44,7 +44,7 @@ public class recicleview extends AppCompatActivity implements AdapterView.OnItem
         nombre.add(new PerfilModelo("Osvaldo Garrido","El mejor,nose en que",R.drawable.perfil));
         nombre.add(new PerfilModelo("Javier Armani","El pulentoso",R.drawable.perfil));
         nombre.add(new PerfilModelo("Pedro Marmol","El mejor,nose en que",R.drawable.perfil));
-        nombre.add(new PerfilModelo("Oficial Carrillo","El mejor,ennada ",R.drawable.perfil));
+        nombre.add(new PerfilModelo("Oficial Carrillo","El mejor,en nada ",R.drawable.perfil));
         nombre.add(new PerfilModelo("Manuel  Duranga","El reguleque,nose en que",R.drawable.perfil));
 
         return nombre;
