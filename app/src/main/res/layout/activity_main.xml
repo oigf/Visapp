@@ -80,6 +80,8 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="verificar"
+        android:backgroundTint="@color/nacho"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

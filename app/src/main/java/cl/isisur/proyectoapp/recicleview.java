@@ -41,11 +41,11 @@ public class recicleview extends AppCompatActivity implements AdapterView.OnItem
     }
     public List<PerfilModelo> ObtenerPerfiles(){
         List<PerfilModelo> nombre=new ArrayList<>();
-        nombre.add(new PerfilModelo("Osvaldo Garrido","El mejor,nose en que",R.drawable.perfil));
-        nombre.add(new PerfilModelo("Javier Armani","El pulentoso",R.drawable.perfil));
-        nombre.add(new PerfilModelo("Pedro Marmol","El mejor,nose en que",R.drawable.perfil));
-        nombre.add(new PerfilModelo("Oficial Carrillo","El mejor,en nada ",R.drawable.perfil));
-        nombre.add(new PerfilModelo("Manuel  Duranga","El reguleque,nose en que",R.drawable.perfil));
+        nombre.add(new PerfilModelo("Osvaldo Garrido","Trabajo de instalacion de camaras/ Fecha: 01-09-2022",R.drawable.gerente));
+        nombre.add(new PerfilModelo("Javier Armani","Mantenimiento sistema CCTV/ Fecha: 10-09-2022",R.drawable.gerente));
+        nombre.add(new PerfilModelo("Pedro Marmol","Instalacion de sistema CCTV a vehiculo/ Fecha: 15-09-2022",R.drawable.gerente));
+        nombre.add(new PerfilModelo("Oficial Carrillo","Mantencion y remplazo de cableado/ Fecha: 10-08-2022",R.drawable.gerente));
+        nombre.add(new PerfilModelo("Manuel  Duranga","Ajuste de camaras/ Fecha: 13-08-2022 ",R.drawable.gerente));
 
         return nombre;
     }

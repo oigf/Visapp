@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,17 +21,19 @@ public class MainActivity extends AppCompatActivity {
     Button ventana;
     private CheckBox chkSeleccionar;
     private String mensaje;
-
-
+    //private ProgressBar progresbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //progresbar = findViewById(R.id.progressBar);
         ventana = (Button) findViewById(R.id.ventana);
         chkSeleccionar = (CheckBox) findViewById(R.id.checkBoxseleccionar);
 
-
+        //Intent i = new Intent( MainActivity.this, pantallacarga.class);
+        //startActivity(i);
+        //progresbar.setMax(200);
 
         ventana.setOnClickListener(new View.OnClickListener() {
             @Override
