@@ -61,7 +61,7 @@
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnregistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -79,19 +79,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="verificar"
         android:backgroundTint="@color/nacho"
+        android:text="verificar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnregistrar" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="307dp"
         android:layout_height="159dp"
-        android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"

@@ -19,21 +19,20 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Button ventana;
+    Button registrar;
     private CheckBox chkSeleccionar;
     private String mensaje;
-    //private ProgressBar progresbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //progresbar = findViewById(R.id.progressBar);
         ventana = (Button) findViewById(R.id.ventana);
+        registrar =(Button)findViewById(R.id.btnregistrar);
         chkSeleccionar = (CheckBox) findViewById(R.id.checkBoxseleccionar);
 
-        //Intent i = new Intent( MainActivity.this, pantallacarga.class);
-        //startActivity(i);
-        //progresbar.setMax(200);
+
 
         ventana.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
                     toast.show();
                 }
 
+            }
+        });
+
+        registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent( MainActivity.this, Registrar.class);
+                startActivity(i);
             }
         });
 
