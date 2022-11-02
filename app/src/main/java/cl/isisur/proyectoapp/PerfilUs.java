@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class PerfilUs extends AppCompatActivity {
     TextView telefono;
     TextView correo;
     ImageView iv1;
+    Button maps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class PerfilUs extends AppCompatActivity {
         telefono = findViewById(R.id.recibetelefono);
         correo = findViewById(R.id.recibecorreo);
         iv1 = findViewById(R.id.iv1);
+        maps = findViewById(R.id.maps);
 
         Bundle recibeDatos = getIntent().getExtras();
         String info = recibeDatos.getString("keyDatos");
@@ -50,6 +53,14 @@ public class PerfilUs extends AppCompatActivity {
         fechanac.setText(info2);
         telefono.setText(info3);
         correo.setText(info4);
+
+        maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(PerfilUs.this,MapsActivity.class);
+                startActivity(i);
+            }
+        });
     }
     final int CAPTURA_IMAGEN=1;
 
