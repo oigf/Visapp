@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Registrar extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
 
@@ -17,6 +19,7 @@ public class Registrar extends AppCompatActivity implements AdapterView.OnItemSe
     EditText telefonoen;
     EditText correoen;
     Button btncrear;
+    private String mensaje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class Registrar extends AppCompatActivity implements AdapterView.OnItemSe
                 enviaDatos.putString("keyDatos2",fechanacen.getText().toString());
                 enviaDatos.putString("keyDatos3",telefonoen.getText().toString());
                 enviaDatos.putString("keyDatos4",correoen.getText().toString());
+
 
                 Intent i = new Intent(Registrar.this,PerfilUs.class);
                 i.putExtras(enviaDatos);
