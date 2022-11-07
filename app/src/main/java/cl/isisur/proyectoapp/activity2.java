@@ -13,6 +13,7 @@ import android.widget.Spinner;
 public class activity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     Button siguientepage;
+    Button btnsensor;
     String[] Selecione = {"Quedo Buenisimo", "Quedo Bueno", "Quedo presentable", "Quedo malo", "Quedo feo"};
 
 
@@ -23,6 +24,7 @@ public class activity2 extends AppCompatActivity implements AdapterView.OnItemSe
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
         siguientepage=(Button)findViewById(R.id.siguientepage);
+        btnsensor=(Button)findViewById(R.id.btnsensor);
 
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Selecione);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -35,6 +37,15 @@ public class activity2 extends AppCompatActivity implements AdapterView.OnItemSe
                 startActivity(i);
             }
         });
+
+        btnsensor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity2.this,Sensor.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
