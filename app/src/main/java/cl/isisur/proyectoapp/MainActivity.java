@@ -58,9 +58,25 @@ public class MainActivity extends AppCompatActivity {
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent( MainActivity.this, Registrar.class);
-                startActivity(intent);
+            public void onClick(View view)
+            {
+                if (chkSeleccionar.isChecked() == true)
+                {
+                    mensaje = "Nuevo Registro";
+                    Toast toast =Toast.makeText(MainActivity.this, mensaje , Toast.LENGTH_SHORT);
+                    toast.show();
+                    Intent i = new Intent( MainActivity.this, activity2.class);
+                    startActivity(i);
+
+                }else{
+                    mensaje = "Registro antiguo";
+                    Toast toast =Toast.makeText(MainActivity.this, mensaje , Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 90, 0);
+                    toast.show();
+                    Intent intent = new Intent( MainActivity.this, Registrar.class);
+                    startActivity(intent);
+                }
+
             }
         });
 

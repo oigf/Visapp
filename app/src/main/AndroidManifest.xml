@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cl.isisur.proyectoapp">
-<uses-feature android:name="android.harware.sensor.proximity"/>
+
+    <uses-feature android:name="android.harware.sensor.proximity" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAPP"
         tools:targetApi="31">
+        <activity
+            android:name=".Editar"
+            android:exported="false" />
+        <activity
+            android:name=".Leer"
+            android:exported="false" />
+        <activity
+            android:name=".FORMULARIO"
+            android:exported="false" />
         <activity
             android:name=".Sensor"
             android:exported="false" />
