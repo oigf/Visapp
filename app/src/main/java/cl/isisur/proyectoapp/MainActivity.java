@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     mensaje = "Nuevo Registro";
                     Toast toast =Toast.makeText(MainActivity.this, mensaje , Toast.LENGTH_SHORT);
                     toast.show();
-                    Intent i = new Intent( MainActivity.this, activity2.class);
+                    Intent i = new Intent( MainActivity.this, FORMULARIO.class);
                     startActivity(i);
 
                 }else{

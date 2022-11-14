@@ -67,7 +67,7 @@ public class Leer extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, android.view.View view, int position, long l) {
                     Persona persona = lista.get(position);
-                    Intent i = new Intent(getApplicationContext(), Editar.class);
+                    Intent i = new Intent(getApplicationContext(), Edit.class);
                     i.putExtra("id",persona.id);
                     i.putExtra("nombre",persona.nombre);
                     i.putExtra("apellido",persona.apellido);

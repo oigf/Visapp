@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Editar extends AppCompatActivity {
+public class Edit extends AppCompatActivity {
 
-    private EditText ed_nombre,ed_apellido,ed_fecha,ed_correo,ed_telefono,ed_id;
-    private Button b_editar,b_eliminar,b_volver;
+    private EditText ed_nombre, ed_apellido, ed_fecha, ed_correo, ed_telefono, ed_id;
+    private Button b_editar, b_eliminar, b_volver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class Editar extends AppCompatActivity {
         ed_nombre = findViewById(R.id.et_nombre);
         ed_apellido = findViewById(R.id.et_apellido);
         ed_fecha = findViewById(R.id.et_fechanac);
+
         ed_correo = findViewById(R.id.et_correo);
         ed_telefono = findViewById(R.id.et_telefono);
         ed_id = findViewById(R.id.id);
@@ -71,21 +72,19 @@ public class Editar extends AppCompatActivity {
         });
     }
 
-    public void eliminar()
-    {
-        try
-        {
+    public void eliminar() {
+        try {
             String id = ed_id.getText().toString();
 
-            SQLiteDatabase db = openOrCreateDatabase("BD_EJEMPLO", Context.MODE_PRIVATE,null);
+            SQLiteDatabase db = openOrCreateDatabase("BD_EJEMPLO", Context.MODE_PRIVATE, null);
 
 
             String sql = "delete from persona where id = ?";
             SQLiteStatement statement = db.compileStatement(sql);
 
-            statement.bindString(1,id);
+            statement.bindString(1, id);
             statement.execute();
-            Toast.makeText(this,"Datos eliminados de la base de datos.",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Datos eliminados de la base de datos.", Toast.LENGTH_LONG).show();
 
             ed_nombre.setText("");
             ed_apellido.setText("");
@@ -94,16 +93,13 @@ public class Editar extends AppCompatActivity {
             ed_telefono.setText("");
             ed_nombre.requestFocus();
 
-        }
-        catch (Exception ex)
-        {
-            Toast.makeText(this,"Error no se pudieron guardar los datos.",Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            Toast.makeText(this, "Error no se pudieron guardar los datos.", Toast.LENGTH_LONG).show();
         }
     }
-    public void editar()
-    {
-        try
-        {
+
+    public void editar() {
+        try {
             String nombre = ed_nombre.getText().toString();
             String apellido = ed_apellido.getText().toString();
             String fecha = ed_fecha.getText().toString();
@@ -111,18 +107,18 @@ public class Editar extends AppCompatActivity {
             String telefono = ed_telefono.getText().toString();
             String id = ed_id.getText().toString();
 
-            SQLiteDatabase db = openOrCreateDatabase("BD_EJEMPLO",Context.MODE_PRIVATE,null);
+            SQLiteDatabase db = openOrCreateDatabase("BD_EJEMPLO", Context.MODE_PRIVATE, null);
 
             String sql = "update persona set nombre = ?,apellido=?,fecha=?,correo=?,telefono=? where id= ?";
             SQLiteStatement statement = db.compileStatement(sql);
-            statement.bindString(1,nombre);
-            statement.bindString(2,apellido);
-            statement.bindString(3,fecha);
-            statement.bindString(4,correo);
-            statement.bindString(5,telefono);
-            statement.bindString(6,id);
+            statement.bindString(1, nombre);
+            statement.bindString(2, apellido);
+            statement.bindString(3, fecha);
+            statement.bindString(4, correo);
+            statement.bindString(5, telefono);
+            statement.bindString(6, id);
             statement.execute();
-            Toast.makeText(this,"Datos actualizados satisfactoriamente en la base de datos.",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Datos actualizados satisfactoriamente en la base de datos.", Toast.LENGTH_LONG).show();
 
             ed_nombre.setText("");
             ed_apellido.setText("");
@@ -130,10 +126,8 @@ public class Editar extends AppCompatActivity {
             ed_correo.setText("");
             ed_telefono.setText("");
             ed_nombre.requestFocus();
-        }
-        catch (Exception ex)
-        {
-            Toast.makeText(this,"Error no se pudieron guardar los datos.",Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            Toast.makeText(this, "Error no se pudieron guardar los datos.", Toast.LENGTH_LONG).show();
         }
     }
 }
